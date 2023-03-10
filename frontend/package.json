@@ -1,6 +1,7 @@
 {
-  "name": "client",
-  "version": "0.1.0",
+  "homepage": "https://mern-template-lac.vercel.app",
+  "name": "mern-template-lac.vercel.app",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "react": "^16.9.0",
@@ -17,7 +18,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5001",
   "browserslist": {
     "production": [
       ">0.2%",
