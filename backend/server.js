@@ -7,8 +7,13 @@ const routes = require('./routes/routes');
 const path = require('path');
 
 
-const API_PORT = 5000;
+const API_PORT = 5001;
 const app = express();
+//new 
+app.use(express.json());
+
+
+
 app.use(cors());
 
 
@@ -28,12 +33,20 @@ app.use(cors());
 
 // (optional) only made for logging and
 // bodyParser, parses the request body to be a readable json format
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
+
+
+// Commented out
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 app.use(logger('dev'));
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/')));
+app.use(express.static(path.join(__dirname, '../frontend', 'build')));
+app.get('/*', (req, res) => {
+    console.log('in here')
+    res.sendFile(path.join(__dirname, '../frontend', 'build', 'index.html'));
+  })
 
 // append /api for our http requests
 app.use('/api', routes);

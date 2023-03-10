@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "backend",
   "version": "1.0.0",
   "description": "backend server for project",
   "main": "app.js",
@@ -9,7 +9,7 @@
   },
   "author": "Brandon VanCamp",
   "license": "MIT",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5001",
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
